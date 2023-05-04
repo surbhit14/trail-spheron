@@ -1344,7 +1344,7 @@ window.onload = async function () {
 
         accounts = await provider.request({ method: 'eth_requestAccounts' })
         console.log(accounts)
-        document.getElementById("my_address").innerHTML += accounts[0]
+        // document.getElementById("my_address").innerHTML += accounts[0]
         document.getElementById("view_sent_option").addEventListener("click", () => {
             window.location = "./view_sent_option.html"
         })
@@ -1694,12 +1694,12 @@ window.onload = async function () {
 
 async function connect_metamask() {
     console.log("abd");
-    console.log(provider)
+    console.log(provider);
     accounts = await provider.request({ method: 'eth_requestAccounts' })
     
     console.log(accounts)
     if (accounts.length > 0) {
-        window.location = './pages/homepage.html'
+        window.location = './pages/new-homepage.html'
     }
 }
 

@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
+
+div{
+    color:white
+}
+
 #trail_logo_img {
     width: 230px;
     height: 130px;
@@ -154,7 +159,7 @@
 
 .tx_list_claim {
     margin-top: 30px;
-    margin-left: 20px;
+    margin-left: auto;
     margin-right: 30px;
     color: green;
 }

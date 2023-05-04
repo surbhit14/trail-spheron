@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 
@@ -8,86 +9,102 @@
     <title>Document</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./glass-morphism.css">
     <script src="../bundle_myscript.js"></script>
 </head>
 
 <body>
-    <div id="home_page">
-        <div id="header">
-            <div>
-                <img id="top_logo" src="../assets/trail_logo_2.jpeg" alt="">
-            </div>
-            <div id="my_address">
-                Address :
-            </div>
-            <div>
-                <img id="kebab_icon" data-target="#exampleModalLong" data-toggle="modal" src="../assets/kebab.png"
-                    alt="">
-            </div>
-        </div>
-        <div id="send_heading">
-            SEND ETHER/ERC20 TOKENS
-        </div>
-        <div class="line"></div>
-        <form id="send_form">
-            <label for="receiving_address"> Receiving Address</label><br>
-            <input type="text" id="receiving_address" name="receiving_address" placeholder="Receiving Address"><br>
-            <label id="amt_send_label" for="amount_to_be_send"> Amount to be send</label><br>
-            <input type="text" id="amount_to_be_send" name="amount_to_be_send" placeholder="Amount to be send"><br><br>
-            <label for="select_erc20_token">Unit (Click below to change)</label>
-            <div id="select_erc20_token" data-target="#erc20_list_modal" data-toggle="modal">
-                <div id="sending_unit_logo">
-                    <img id="eth_logo" src="../erc20data/eth_logo.png" alt="">
-                </div>
-                <div style="overflow-wrap: break-word; max-width: 240px;" id="sending_unit_name">
-                    ETHER
-                </div>
-            </div>
-            <div id="send_eth">
-                SEND
-            </div>
-        </form>
+<section class="mb-5 d-flex flex-column align-items-start justify-content-center text-white  container">
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
-            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Options</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div id="options_menu">
-                            <div id="send_eth_option" class="txt_center active_option">
-                                Send Ether/ ERC20 Tokens
-                            </div>
-                            <div class="line line-gray"></div>
-                            <div id="view_sent_option" class="txt_center">
-                                View sent transactions (Ether)
-                            </div>
-                            <div class="line line-gray"></div>
-                            <div id="view_unclaimed_option" class="txt_center">
-                                View unclaimed transactions (Ether)
-                            </div>
-                            <div class="line line-gray"></div>
-                            <div id="view_sent_erc20_option" class="txt_center">
-                                View sent transactions (ERC20)
-                            </div>
-                            <div class="line line-gray"></div>
-                            <div id="view_unclaimed_erc20_option" class="txt_center">
-                                View unclaimed transactions (ERC20)
-                            </div>
+    <a href="/">
+        <img style="width:250px; filter:invert(200);" class="my-5 ms-3" src="../images/trail.svg" alt=""
+            srcset="">
+    </a>
+    <div id="header">
+        <div>
+            <img id="top_logo" src="../assets/trail_logo_2.jpeg" alt="">
+        </div>
+        <div id="my_address">
+            Address :
+        </div>
+        <div>
+            <img id="kebab_icon" data-target="#exampleModalLong" data-toggle="modal" src="../assets/kebab.png"
+                alt="">
+        </div>
+    </div>
+    <div class="section glass w-100 p-5">
+            <h1 class="h1 fw-bold">Transfer ETH/ERC20 </h1>
+            <form >
+                <div class="flex input-group">
+                    <label class="fw-bold mt-5 mb-2">Receiving Address </label>
+                    <input class="form-control rounded bg-dark text-white p-4 w-100 mb-4" rows="3" type="text" id="receiving_address" name="receiving_address" placeholder="Receiving Address" ><br>
+   
+                    <label class="fw-bold mb-2">Amount to be send </label>
+                    <input class="form-control rounded bg-dark text-white p-4 w-100 mb-4" type="text" id="amount_to_be_send" name="amount_to_be_send" placeholder="Amount to be send"><br><br>
+                    
+                    <label for="select_erc20_token" class="fw-bold mb-2">Unit (Click below to change)</label>
+                    
+                    
+                    <div id="select_erc20_token" class="form-control rounded bg-dark text-white p-4 w-100 mb-4" data-target="#erc20_list_modal" data-toggle="modal">
+                        <div id="sending_unit_logo">
+                            <img id="eth_logo" src="../erc20data/eth_logo.png" alt="">
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
+                        <div style="overflow-wrap: break-word; max-width: 240px;" id="sending_unit_name">
+                            ETHER
+                        </div>
+                    </div>                    
+                        <div class="btn shadow btn-warning fw-bold p-3 w-100 mt-4" id="send_eth">
+                            Send
+                        </div>
+                   
+                </div>
+
+            </form>
+
+            
+    </div>
+</section>
+
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Options</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div id="options_menu">
+                <div id="send_eth_option" class="txt_center active_option">
+                    Send Ether/ ERC20 Tokens
+                </div>
+                <div class="line line-gray"></div>
+                <div id="view_sent_option" class="txt_center">
+                    View sent transactions (Ether)
+                </div>
+                <div class="line line-gray"></div>
+                <div id="view_unclaimed_option" class="txt_center">
+                    View unclaimed transactions (Ether)
+                </div>
+                <div class="line line-gray"></div>
+                <div id="view_sent_erc20_option" class="txt_center">
+                    View sent transactions (ERC20)
+                </div>
+                <div class="line line-gray"></div>
+                <div id="view_unclaimed_erc20_option" class="txt_center">
+                    View unclaimed transactions (ERC20)
                 </div>
             </div>
         </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div>
+</div>
+
 
         <div class="modal fade" id="erc20_list_modal" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -184,7 +201,7 @@
             </div>
         </div>
 
-    </div>
+        
 
     <script src="../bootstrap_files/slim.js"></script>
     <script src="../bootstrap_files/pooper.js"></script>
