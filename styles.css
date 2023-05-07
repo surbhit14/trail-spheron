@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 
-div{
-    color:white
+div {
+    color: white
+}
+
+body {
+    color: white;
 }
 
 #trail_logo_img {
@@ -47,19 +51,15 @@ div{
     margin-left: 20px;
 }
 
-#header {
-    display: flex;
-}
-
 #my_address {
-    margin-top: 17px;
-    margin-right: 10px;
-    margin-left: 15px;
+    display: inline;
+    margin-top: 32px;
     word-break: break-all;
+    margin-bottom: 20px;
 }
 
 #kebab_icon {
-    margin-top: 23px;
+    margin-top: 3px;
     width: 17px;
     height: 17px;
     margin-right: 10px;
@@ -274,4 +274,25 @@ div{
 .already_rev {
     background-color: aliceblue;
     color: black;
+}
+
+#view_other_options {
+    margin-top: 20px;
+    float: right;
+    display: inline;
+    margin-left: auto;
+    background-color: palevioletred;
+    border-radius: 12px;
+    padding: 12px;
+    border: black;
+}
+
+#header {
+    margin-top: 10px;
+    width: 80%;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    margin-bottom: 20px;
 }

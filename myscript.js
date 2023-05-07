@@ -1160,7 +1160,7 @@ const contract_erc20_abi = [
 
 const dai_token_address = "0x7AF17A48a6336F7dc1beF9D485139f7B6f4FB5C8"
 
-const contract_ether_address = '0x610319176dFA876d438d20E71C390Cb74ED5Ab66'
+const contract_ether_address = '0xA8785B7219610F99Ac974DB85e55C87e1aab34BA'
 
 const erc20_escrow_address = "0x9dAa521803Db7d044625029C60977e9A7Fe82BF5"
 
@@ -1178,7 +1178,7 @@ const contract = new web3.eth.Contract(contract_ether_ABI, contract_ether_addres
 const erc20_escrow_contract = new web3.eth.Contract(contract_erc20_abi, erc20_escrow_address)
 
 var selectedToken = "eth_token_text"
-var selectedTokenText = "ETHER"
+var selectedTokenText = "BIT"
 
 async function send_eth() {
 
@@ -1263,20 +1263,20 @@ async function send_eth() {
 
 window.onload = async function () {
     console.log(window.location.href);
-    if (window.location.href.indexOf("popup.html") !== -1)
+    if (window.location.href.indexOf("x.html") !== -1)
         document.getElementById("connect_button").addEventListener("click", connect_metamask);
-    else if (window.location.href.indexOf("homepage.html") !== -1) {
+    else if (window.location.href.indexOf("new-homepage.html") !== -1) {
 
         document.getElementById("eth_token_text").addEventListener("click", () => {
             if (ownTokenAddress.length == 0)
                 document.getElementById(selectedToken).innerHTML = selectedTokenText
             else
                 ownTokenAddress = ""
-            document.getElementById("eth_token_text").innerHTML = "ETHER (SELECTED)"
+            document.getElementById("eth_token_text").innerHTML = "BIT (SELECTED)"
             selectedToken = "eth_token_text"
-            selectedTokenText = "ETHER"
+            selectedTokenText = "BIT"
 
-            document.getElementById("sending_unit_name").innerHTML = "ETHER"
+            document.getElementById("sending_unit_name").innerHTML = "BIT"
             document.getElementById("eth_logo").src = "../erc20data/eth_logo.png"
         })
         document.getElementById("tether_token_text").addEventListener("click", () => {
@@ -1344,7 +1344,7 @@ window.onload = async function () {
 
         accounts = await provider.request({ method: 'eth_requestAccounts' })
         console.log(accounts)
-        // document.getElementById("my_address").innerHTML += accounts[0]
+        document.getElementById("my_address").innerHTML += accounts[0]
         document.getElementById("view_sent_option").addEventListener("click", () => {
             window.location = "./view_sent_option.html"
         })
@@ -1367,7 +1367,7 @@ window.onload = async function () {
         console.log(accounts)
         document.getElementById("my_address").innerHTML += accounts[0]
         document.getElementById("send_eth_option").addEventListener("click", () => {
-            window.location = "./homepage.html"
+            window.location = "./new-homepage.html"
         })
         document.getElementById("view_unclaimed_option").addEventListener("click", () => {
             window.location = "./view_unclaimed_option.html"
@@ -1403,14 +1403,14 @@ window.onload = async function () {
 
                         if (result[i]["reverted"] == false) {
 
-                            var htmlCode = '<div id="tx1"><div id="tx1-box1"><div class="tx_list_data">' + amt + ' ETHER SENT TO <br>' + receiver_address + '</div><div class="tx_list_claim">STATUS : <br>' + claim_status + '</div></div><div class="tx_list_revert" data-target="#revert_conf_box" data-toggle="modal" >REVERT THIS TRANSACTION</div><div class="line"></div></div>';
+                            var htmlCode = '<div id="tx1"><div id="tx1-box1"><div class="tx_list_data">' + amt + ' BIT SENT TO <br>' + receiver_address + '</div><div class="tx_list_claim">STATUS : <br>' + claim_status + '</div></div><div class="tx_list_revert" data-target="#revert_conf_box" data-toggle="modal" >REVERT THIS TRANSACTION</div><div class="line"></div></div>';
                             document.getElementById('sent_tx_list').innerHTML += htmlCode
 
                             document.getElementById('no-sent-tx-page').style = "margin-top: 0px; margin-bottom: 0px; visibility: collapse;"
 
                         } else if (result[i]["reverted"] == true) {
 
-                            var htmlCode = '<div id="tx1"><div id="tx1-box1"><div class="tx_list_data">' + amt + ' ETHER SENT TO <br>' + receiver_address + '</div><div class="tx_list_claim">STATUS : <br>' + claim_status + '</div></div><div class="tx_list_revert already_rev">ALREADY REVERTED</div><div class="line"></div></div>';
+                            var htmlCode = '<div id="tx1"><div id="tx1-box1"><div class="tx_list_data">' + amt + ' BIT SENT TO <br>' + receiver_address + '</div><div class="tx_list_claim">STATUS : <br>' + claim_status + '</div></div><div class="tx_list_revert already_rev">ALREADY REVERTED</div><div class="line"></div></div>';
                             document.getElementById('sent_tx_list').innerHTML += htmlCode
 
                             document.getElementById('no-sent-tx-page').style = "margin-top: 0px; margin-bottom: 0px; visibility: collapse;"
@@ -1437,7 +1437,7 @@ window.onload = async function () {
                             let amt = result[k]['amount'] / 1000000000000000000
                             let receiver_address = result[k]['receiver']
 
-                            document.getElementById("revert_info").innerHTML = amt + ' ETHER SENT TO <br>' + receiver_address
+                            document.getElementById("revert_info").innerHTML = amt + ' BIT SENT TO <br>' + receiver_address
 
                             console.log('revert data element index: ' + k)
                             document.getElementById("accept_revert").addEventListener("click", () => {
@@ -1460,7 +1460,7 @@ window.onload = async function () {
         console.log(accounts)
         document.getElementById("my_address").innerHTML += accounts[0]
         document.getElementById("send_eth_option").addEventListener("click", () => {
-            window.location = "./homepage.html"
+            window.location = "./new-homepage.html"
         })
         document.getElementById("view_sent_option").addEventListener("click", () => {
             window.location = "./view_sent_option.html"
@@ -1490,7 +1490,7 @@ window.onload = async function () {
                 }
 
                 if (amt !== 0) {
-                    var htmlCode = '<div id="tx_unclaimed_1"><div class="unclaimed_box_1">' + sender + ' SENT YOU ' + amt + ' ETHER</div><div class="unclaimed_claim_button">' + claimed_btn_txt + '</div><div class="line"></div></div>';
+                    var htmlCode = '<div id="tx_unclaimed_1"><div class="unclaimed_box_1">' + sender + ' SENT YOU ' + amt + ' BIT</div><div class="unclaimed_claim_button">' + claimed_btn_txt + '</div><div class="line"></div></div>';
                     document.getElementById('unclaimed_list').innerHTML += htmlCode
 
                     document.getElementById('tx_unclaimed_list').style = "margin-top: 0px; margin-bottom: 0px; visibility: collapse;"
@@ -1530,7 +1530,7 @@ window.onload = async function () {
             window.location = "./view_unclaimed_option.html"
         })
         document.getElementById("send_eth_option").addEventListener("click", () => {
-            window.location = "./homepage.html"
+            window.location = "./new-homepage.html"
         })
         document.getElementById("view_unclaimed_erc20_option").addEventListener("click", () => {
             window.location = "./view_unclaimed_erc20_option.html"
@@ -1637,7 +1637,7 @@ window.onload = async function () {
             window.location = "./view_unclaimed_option.html"
         })
         document.getElementById("send_eth_option").addEventListener("click", () => {
-            window.location = "./homepage.html"
+            window.location = "./new-homepage.html"
         })
         document.getElementById("view_sent_erc20_option").addEventListener("click", () => {
             window.location = "./view_sent_erc20_transactions.html"
@@ -1661,7 +1661,7 @@ window.onload = async function () {
                 }
 
                 if (amt !== 0) {
-                    var htmlCode = '<div id="tx_unclaimed_1"><div class="unclaimed_box_1">' + sender + ' SENT YOU ' + amt + ' ETHER</div><div class="unclaimed_claim_button">' + claimed_btn_txt + '</div><div class="line"></div></div>';
+                    var htmlCode = '<div id="tx_unclaimed_1"><div class="unclaimed_box_1">' + sender + ' SENT YOU ' + amt + ' BIT</div><div class="unclaimed_claim_button">' + claimed_btn_txt + '</div><div class="line"></div></div>';
                     document.getElementById('unclaimed_list').innerHTML += htmlCode
 
                     document.getElementById('tx_unclaimed_list').style = "margin-top: 0px; margin-bottom: 0px; visibility: collapse;"
